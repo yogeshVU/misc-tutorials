@@ -47,3 +47,16 @@ values ('Dog','Rex',6,1), ('Rabbit', 'Fluffy',2,5),
 ('Tortoise','Squirtle',42,3), ('Dog','Biggles',4,1);
 
 select * from pets;
+
+select * from pets
+where age not in (1,2,3)
+
+select owners.first_name, owners.last_name, pets.full_name from owners 
+join pets on  owners.id = pets.owner_id;
+
+select o.first_name, o.last_name, p.full_name from owners o
+right join pets p on  o.id = p.owner_id;
+
+select o.first_name, o.last_name, p.full_name from owners o
+right join pets p on  o.id = p.owner_id
+where p.species = 'Dog';
